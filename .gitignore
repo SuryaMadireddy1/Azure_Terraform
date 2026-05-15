@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# GitHub Actions local runner artifacts
+findings.json
+opspilot-results.json
