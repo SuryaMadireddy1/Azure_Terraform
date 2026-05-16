@@ -16,4 +16,4 @@ branding:
   color: blue
 runs:
   using: docker
-  image: Dockerfile
+  image: action/Dockerfile
