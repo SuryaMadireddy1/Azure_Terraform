@@ -142,37 +142,4 @@ data "azurerm_public_ip" "Test-ip-data" {
 
 output "public_ip_address" {
     value = "${azurerm_linux_virtual_machine.Test-vm.name} : ${data.azurerm_public_ip.Test-ip-data.ip_address}"
-
-}
-resource "aws_s3_bucket" "test" {
-  bucket = "my-test-bucket"
-  acl    = "public-read"
-}
-
-resource "aws_s3_bucket" "insecure_test" {
-  bucket = "ml-training-data"
-  acl    = "public-read"
-}
-
-resource "aws_db_instance" "main" {
-  identifier        = "prod-db"
-  engine            = "mysql"
-  instance_class    = "db.t3.micro"
-  username          = "admin"
-  password          = "hardcoded-password-123"
-  skip_final_snapshot = true
-}
-
-resource "aws_s3_bucket" "ml_data" {
-  bucket = "ml-training-data"
-  acl    = "public-read"
-}
-
-resource "aws_db_instance" "prod" {
-  identifier          = "prod-db-2"
-  engine              = "mysql"
-  instance_class      = "db.t3.micro"
-  username            = "admin"
-  password            = "hardcoded-password-123"
-  skip_final_snapshot = true
 }
